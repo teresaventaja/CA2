@@ -6,21 +6,6 @@ package ca2;
 
 /**
  *
- * (B)	Write another class, EmployeeTest, containing the main method, which
-
-	creates 3 Employee objects, with the following details
-
-Name	Email
-Joe Bloggs	jb@gmail.com 
-Ann Banana	ab@gmail.com
-Tom Thumb	tt@gmail.com
-
-	declares an array, called projectGroup, to store these 3 Employee objects and loads the array with the objects.
-	prints out the value of variable nextEmpNum to the terminal window. 
-
-(C)	Write the code to search and display the name of each of the employees in the projectGroup array, who have an employee number above the value stored in a variable called m.
-
-Challenge: Implement a check for a valid email address
 
  * @author User
  */
@@ -48,23 +33,23 @@ public class Employee {
     
     public String getName() {
     return name;
-}
+    }
     
     public String getEmail() {
     return email;
-}
+    }
     
     public int getEmpNum() {
     return empNum;
-}
+    }
     
     public void setEmail(String email) {
     if (email.length() > 3) {
     this.email = email;
-    } else {
-    System.out.println("The email must be at least 3 characters long");
+        } else {
+        System.out.println("The email must be at least 3 characters long");
+        }
     }
-}
 
     public static int getNextEmpNum() {
     return nextEmpNum;
