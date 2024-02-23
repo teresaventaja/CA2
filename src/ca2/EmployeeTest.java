@@ -23,9 +23,9 @@ public class EmployeeTest {
         
         // Three objects
         
-        Employee firstEmployee = new Employee("Joe Bloggs", "jb@gmail.com");
-        Employee secondEmployee = new Employee("Ann Banana", "ab@gmail.com");
-        Employee thirdEmployee = new Employee("Tom Thumb", "tt@gmail.com");
+        Employee firstEmployee = new Employee("Joe Bloggs", "jb@gmail.com") {};
+        Employee secondEmployee = new Employee("Ann Banana", "ab@gmail.com") {};
+        Employee thirdEmployee = new Employee("Tom Thumb", "tt@gmail.com") {};
         
         // Stored in an arrayList
         
@@ -59,6 +59,18 @@ public class EmployeeTest {
             break; // Exit the loop when the person is found
             }
         }
+        
+        
+        /* Test that "Part 2" works
+        
+        Company firstComp = new Company();
+        firstComp.addNewStaff(secondEmployee);
+        firstComp.addNewStaff(thirdEmployee);
+        
+        firstComp.listEmployees(1);
+       
+        */
+        
         
     }
 }

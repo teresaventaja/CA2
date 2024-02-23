@@ -9,7 +9,7 @@ package ca2;
 
  * @author User
  */
-public class Employee {
+public abstract class Employee {
      /**
      * @param args the command line arguments
      */
@@ -37,7 +37,6 @@ public class Employee {
         email = "default@xmail.com";
         empNum = nextEmpNum++;
     }
-    
     
     // Accessor methods
     
