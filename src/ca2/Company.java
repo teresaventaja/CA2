@@ -16,6 +16,8 @@ import java.util.Iterator;
 public class Company extends Employee {
     
     String companyName;
+    String userName;
+    String password;
     
     ArrayList<Employee> staff = new ArrayList<>();
 
@@ -64,7 +66,26 @@ public class Company extends Employee {
             if (theEmployee.getEmpNum() > empNum) {
                 System.out.println(theEmployee.getName());
             }
-
         }
     }
+
+    /*
+            
+    b)	A particular employee has been designated a “manager”. They are considered as a regular employee for all purposes, 
+        except that they also have a “username” and a “password” as fields, with corresponding getters and setters. 
+
+    c)	Create a Netbean-console menu system for the manager to log in and 
+        and add new staff. (username – “Gnomeo”; Password – “smurf”)
+            
+    */
+            
+        public Manager() {
+        userName = "Gnomeo";
+        password = "smurf";
+        }
+    
+        public void managerLogin() {
+            System.out.println("Please, enter your username");
+        }    
+
 }
