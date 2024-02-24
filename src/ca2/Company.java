@@ -28,6 +28,11 @@ public class Company extends Employee {
         email = "default@xmail.com";
         empNum = nextEmpNum++;
         companyName = "defaultCompany";
+        
+    // Adding to meet "part 2 c)" of the CA
+        
+        userName = "Gnomeo";
+        password = "smurf";
     }
     
     // Write an overloaded constructor which accepts a name value as a parameter.
@@ -79,13 +84,15 @@ public class Company extends Employee {
             
     */
             
-        public Manager() {
-        userName = "Gnomeo";
-        password = "smurf";
+        public Company(String userName, String password) {
+        this.userName = userName;
+        this.password = password;
         }
     
         public void managerLogin() {
-            System.out.println("Please, enter your username");
+            System.out.println("Please, enter your userName and password");
+            
+            System.out.println("Please, enter the employee details");
         }    
 
 }
