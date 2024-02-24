@@ -16,8 +16,8 @@ import java.util.Iterator;
 public class Company extends Employee {
     
     String companyName;
-    String userName;
-    String password;
+    public static String userName;
+    public static String password;
     
     ArrayList<Employee> staff = new ArrayList<>();
 
@@ -81,6 +81,11 @@ public class Company extends Employee {
 
     c)	Create a Netbean-console menu system for the manager to log in and 
         and add new staff. (username – “Gnomeo”; Password – “smurf”)
+    
+    Challenges:
+	Create a method in the Company class called removeStaff() that removes an employee from the staff arrayList (the employee’s empNum is a parameter).
+	Allow the manager to remove employees from the menu
+
             
     */
             
@@ -88,8 +93,14 @@ public class Company extends Employee {
         this.userName = userName;
         this.password = password;
         }
+        
+        getManagerLogin login = new getManagerLogin();
+        String userNameInput = login.askString("Insert username");
+        String passwordInput = login.askString("Insert password");
     
-        public void managerLogin() {
+        public void managerLogin(String userNameInput, String passwordInput) {
+        this.userName = userName;
+        this.password = password;
             System.out.println("Please, enter your userName and password");
             
             System.out.println("Please, enter the employee details");
