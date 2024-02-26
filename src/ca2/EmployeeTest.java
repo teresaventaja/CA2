@@ -71,7 +71,17 @@ public class EmployeeTest {
        
         */
         
+        Company manager = new Company();
         
-        
+        /*
+        manager.managerLogin(secondEmployee);
+        System.out.println(manager.userName);
+        System.out.println(manager.password);
+        */
+               // Company firstComp = new Company();
+                        manager.listEmployees(0);
+        manager.listEmployees(1);
+                manager.listEmployees(2);
+                        manager.listEmployees(3);
     }
 }
