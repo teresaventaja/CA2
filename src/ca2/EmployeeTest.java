@@ -4,8 +4,9 @@
  */
 package ca2;
 
-import static ca2.Employee.nextEmpNum;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Scanner;
 import java.util.Set;
 
 /**
@@ -34,7 +35,7 @@ public class EmployeeTest {
         projectGroup.add(secondEmployee);
         projectGroup.add(thirdEmployee);
         
-        // Use of getter created in Emloyee Class 
+        // Use of getter created in Employee Class 
         
         System.out.println(Employee.getNextEmpNum());
    
@@ -51,7 +52,7 @@ public class EmployeeTest {
         
         // Get employee name based on employee number
     
-        int m = secondEmployee.empNum;
+        int m = secondEmployee.empNum;  // Test employee
 
         for  (Employee displayEmployee : projectGroup) {
         if (displayEmployee.empNum == m) {
@@ -61,27 +62,101 @@ public class EmployeeTest {
         }
         
         
-        /* Test that "Part 2" works
+        /* 
+        
+        TESTING IF PART 2 SECTION (a) iii) WORKS
         
         Company firstComp = new Company();
         firstComp.addNewStaff(secondEmployee);
         firstComp.addNewStaff(thirdEmployee);
         
         firstComp.listEmployees(1);
-       
-        */
         
-        Company manager = new Company();
+
+        PART 2 SECTION (c)
         
-        /*
-        manager.managerLogin(secondEmployee);
-        System.out.println(manager.userName);
-        System.out.println(manager.password);
-        */
-               // Company firstComp = new Company();
-                        manager.listEmployees(0);
-        manager.listEmployees(1);
-                manager.listEmployees(2);
-                        manager.listEmployees(3);
+       */
+      Scanner scanner = new Scanner(System.in);
+Company company = new Company();
+        // Manager credentials
+        
+        Manager manager = new Manager("Manager Name", "manager@example.com", "Gnomeo", "smurf");
+
+
+        while (true) {
+            System.out.println("1. Login as Manager, 2. Exit. Choose an option:");
+            int selection = scanner.nextInt();
+            scanner.nextLine(); // Consume newline
+
+            if (selection == 1) {
+                System.out.print("Enter your username: ");
+                String userName = scanner.nextLine();
+                System.out.print("Enter your password: ");
+                String password = scanner.nextLine();
+
+                if (userName.equals(manager.getUserName()) && password.equals(manager.getPassword())) {
+                    System.out.println("Login successful.");
+                    
+                    // Menu to view and add staff
+                    
+                    while (true) {
+                        System.out.println("1. Add new staff, 2. View current staff, 3. Remove staff, 4. Logout. Choose an option:");
+                        int managerOption = scanner.nextInt();
+                scanner.nextLine(); // Consume newline after reading an int to clear the input buffer
+
+switch (managerOption) {
+        case 1:
+            System.out.print("Enter staff name: ");
+            String staffName = scanner.nextLine();
+            System.out.print("Enter staff email: ");
+            String staffEmail = scanner.nextLine();
+            Employee newEmployee = new Employee(staffName, staffEmail) {};
+            company.addNewStaff(newEmployee); // Adjusted to use the company object
+            System.out.println("New staff added.");
+            break;
+        case 2: 
+             System.out.println("Employees list:");
+        for (Employee employee : projectGroup) {
+            System.out.println("Name: " + employee.getName() + ", Email: " + employee.getEmail() + ", Employee Number: " + employee.getEmpNum());
+        }
+        if (projectGroup.isEmpty()) {
+            System.out.println("No employees stored.");
+        }
+            break;
+        case 3:
+ System.out.print("Enter Employee Number of the staff to remove: ");
+    int empNumToRemove = scanner.nextInt();
+    scanner.nextLine(); // Consume newline
+
+    boolean found = false;
+    Iterator<Employee> iterator = projectGroup.iterator();
+    
+    while (iterator.hasNext()) {
+        Employee employee = iterator.next();
+        if (employee.getEmpNum() == empNumToRemove) {
+            iterator.remove();
+            System.out.println("Employee with Employee Number " + empNumToRemove + " has been removed.");
+            found = true;
+            break;
+        }
     }
-}
+    if (!found) {
+        System.out.println("Employee with Employee Number " + empNumToRemove + " not found.");
+    }
+            break;
+        case 4:
+            return; // Logout
+    }
+                    }
+                } else {
+                    System.out.println("Login failed. Please try again.");
+                }
+            } else if (selection == 2) {
+                break; // Exit the console
+            }
+        }
+        scanner.close();
+    }
+
+    }
+

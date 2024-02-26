@@ -16,7 +16,6 @@ public abstract class Employee {
     String name;
     String email;
     int empNum;
-
     
     // Static field
     
@@ -51,6 +50,7 @@ public abstract class Employee {
     public int getEmpNum() {
     return empNum;
     }
+   
     
     // Setter with email validation
     
