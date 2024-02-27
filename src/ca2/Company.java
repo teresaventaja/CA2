@@ -67,7 +67,7 @@ public class Company extends Employee {
         }
     }
     
- public void removeStaff(int employeeNumberToRemove) {
+ public void removeStaff(int employeeNumberToRemove) { // Iterator to remove staff
     Iterator<Employee> iterator = staff.iterator();
     
     while (iterator.hasNext()) {
@@ -80,7 +80,5 @@ public class Company extends Employee {
     }
     System.out.println("Employee with Employee Number " + employeeNumberToRemove + " not found.");
 }   
-    
-
 
 }
